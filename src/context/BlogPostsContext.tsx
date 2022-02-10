@@ -19,8 +19,6 @@ export const BlogPostsProvider = ({ children }: BlogPostsProviderProps) => {
         await getBlogPosts()
         .then((res) => {
             if (res.data) {
-                console.log(res.data, "here rearg")
-                console.log(blogPosts)
                 setBlogPosts(res.data);
             }
         })

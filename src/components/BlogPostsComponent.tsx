@@ -6,7 +6,6 @@ interface BlogPostsProps {}
 
 export const BlogPostsComponent: React.FC<BlogPostsProps> = ({}) => {
     const {blogPosts} = useContext(BlogPostsContext);
-console.log("BlogPost.tsx", blogPosts)
     return (
         <main>
             {blogPosts && blogPosts.map((post) => (

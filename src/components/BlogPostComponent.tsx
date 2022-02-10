@@ -10,7 +10,7 @@ interface BlogPostProps {
 export const BlogPostComponent: React.FC<BlogPostProps> = ({title, body, id}) => {
     return (
         <main>
-            <h1>{title}</h1>
+            <h2>{title}</h2>
             <p>{body}</p>
             <p>{id}</p>
         </main>
