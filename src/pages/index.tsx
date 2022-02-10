@@ -1,15 +1,24 @@
+import { AxiosError, AxiosResponse } from 'axios'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { BlogPost } from '../models/BlogPost'
-import { BlogPostsRepository } from '../repositories/BlogPosts'
+import { BlogPostComponent } from '../components/BlogPostComponent'
+import { BlogPostsComponent } from '../components/BlogPostsComponent'
+import { BlogPostsProvider } from '../context/BlogPostsContext'
 
 const Home: NextPage = () => {
-  BlogPostsRepository.get().then((posts: BlogPost[]) => {console.log(posts)})
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <main>
+      <Head>
+        <title>blogo | lettem know!</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <BlogPostsProvider>
+        <section>
+          <BlogPostsComponent />
+        </section>
+      </BlogPostsProvider>
+    </main>
   )
 }
 
