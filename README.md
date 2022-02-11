@@ -14,11 +14,11 @@
 
 ## Motivation
 
-This repository holds my portfolio, blog and personal website.
+This repository holds a blog with a filtering functionality.
 
 [`https://some-vercel-domain.vercel.app`](https://example.com/).
 
-In this project, I created a simple next.js app to promote my work and studies.
+In this project, I created a simple next.js app that consumes some filler data and displays it such that you can filter your prefered posts.
 
 You can run it by cloning the repository. Running `cd blogo`, `yarn` then executing the command `yarn dev`.
 
