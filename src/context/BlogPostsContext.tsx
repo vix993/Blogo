@@ -54,7 +54,7 @@ export const BlogPostsProvider = ({ children }: BlogPostsProviderProps) => {
 
     return (
         <BlogPostsContext.Provider
-            value={{blogPosts, doSetFilter, filteredPosts}}>
+            value={{blogPosts, filter, doSetFilter, filteredPosts}}>
             {children}
         </BlogPostsContext.Provider>
     );
