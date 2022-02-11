@@ -8,7 +8,7 @@
     }
 
     h1, h2, h3, h4, h5, h6 {
-        @apply font-semibold font-lexend text-gray-900;
+        @apply font-semibold font-lexend text-stone-900;
     }
 
     h1 {
