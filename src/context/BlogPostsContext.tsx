@@ -1,6 +1,6 @@
 import { createContext, useState, ReactNode, useEffect } from 'react';
 
-import { getBlogPosts } from '../repositories/blogPostsRepository';
+import { getBlogPostImage, getBlogPosts } from '../repositories/blogPostsRepository';
 
 import { BlogPost } from '../models/BlogPost';
 import { BlogPostsContextData } from '../models/BlogPostsContextData';
@@ -15,8 +15,8 @@ export const BlogPostsProvider = ({ children }: BlogPostsProviderProps) => {
     const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
 
     // fetching blog posts data
-    const requestBlogPosts = async () => {
-        await getBlogPosts()
+    const requestBlogPosts = () => {
+        getBlogPosts()
         .then((res) => {
             if (res.data) {
                 setBlogPosts(res.data);
@@ -27,13 +27,19 @@ export const BlogPostsProvider = ({ children }: BlogPostsProviderProps) => {
         });
     }
 
+    const requestBlogPostImage = async () => {
+        const randomImage = await getBlogPostImage();
+        console.log(randomImage.data);
+        return randomImage.data;
+    }
+
     useEffect(() => {
         requestBlogPosts();
     }, []);
 
     return (
         <BlogPostsContext.Provider
-            value={{blogPosts}}>
+            value={{blogPosts, requestBlogPostImage}}>
             {children}
         </BlogPostsContext.Provider>
     );
