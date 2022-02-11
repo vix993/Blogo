@@ -8,11 +8,24 @@ interface BlogPostCardProps {
 }
 
 export const BlogPostCard: React.FC<BlogPostCardProps> = ({title, body, id}) => {
+    var truncatedBody = "";
+    if (body.length > 100) {
+        truncatedBody = body.substring(0, 100) + '...';
+    }
     return (
-        <main>
-            <h3>{title}</h3>
-            <p>{body}</p>
-            <p>{id}</p>
+        <main className='w-full px-8 pt-4 h-full'>
+            <div className='w-full h-full flex flex-row rounded-2 gap-2  border border-emerald-100 shadow hover:shadow-lg hover:border-emerald-200 rounded-lg transition duration-400 ease-in-out'>
+                <section className='hidden sm:flex w-1/6 align-center justify-center py-4 px-2'>
+                    <img className='object-cover rounded-2xl' src={`https://picsum.photos/id/${id}/100`} alt={title} />
+
+                </section>
+                <section className=' p-2 sm:w-5/6 flex flex-col'>
+
+                    <h5 >{title}</h5>
+                    <p>{truncatedBody ? truncatedBody : body}</p>
+                </section>
+
+            </div>
         </main>
     )
 }
