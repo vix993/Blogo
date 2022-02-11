@@ -19,7 +19,7 @@ export const BlogPostCard: React.FC<BlogPostCardProps> = ({title, body, id}) => 
                 </section>
                 <section className=' p-2 sm:w-5/6 flex flex-col'>
 
-                    <h5 >{title}</h5>
+                    <h5 className='text-lg mb-2'>{title}</h5>
                     <p>{truncatedBody ? truncatedBody : body}</p>
                 </section>
 
