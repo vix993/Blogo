@@ -1,6 +1,6 @@
 import { createContext, useState, ReactNode, useEffect } from 'react';
 
-import { getBlogPostImage, getBlogPosts } from '../repositories/blogPostsRepository';
+import { getBlogPosts } from '../repositories/blogPostsRepository';
 
 import { BlogPost } from '../models/BlogPost';
 import { BlogPostsContextData } from '../models/BlogPostsContextData';
