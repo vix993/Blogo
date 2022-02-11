@@ -9,7 +9,7 @@ export const BlogPosts: React.FC<BlogPostsProps> = ({}) => {
     const {blogPosts, filteredPosts} = useContext(BlogPostsContext);
     console.log(blogPosts, filteredPosts);
     return (
-        <main className='w-full pt-6 py-4'>
+        <main className='w-full pt-6 py-4 max-w-7xl lg:ml-auto lg:mr-auto'>
             <InputFilter />
             <section className='w-full md:grid lg:grid-cols-2'>
                 {
