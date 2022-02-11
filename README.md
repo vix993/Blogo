@@ -20,7 +20,7 @@ This repository holds my portfolio, blog and personal website.
 
 In this project, I created a simple next.js app to promote my work and studies.
 
-You can run it by cloning the repository. Running `cd my-blog`,`yarn` then executing the command `yarn dev`.
+You can run it by cloning the repository. Running `cd blogo`, `yarn` then executing the command `yarn dev`.
 
 You will be able to access the server on localhost:3000 by default.
 
