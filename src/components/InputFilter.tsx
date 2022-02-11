@@ -7,17 +7,29 @@ import searchIcon from '../assets/search.png';
 interface InputFilterProps {}
 
 export const InputFilter: React.FC<InputFilterProps> = ({}) => {
-    const {blogPosts} = useContext(BlogPostsContext);
+    const {blogPosts, doSetFilter} = useContext(BlogPostsContext);
     return (
-        <main className='w-full md:grid lg:grid-cols-2 py-6'>
-            <div className="flex flex-row mb-4">
-                <span className='opacity-6'>
-
-                    <Image src={searchIcon} width="10px" height="10px"></Image>
+        <main className='w-full px-8 py-4'>
+            <form>
+                <div className="relative text-stone-200 focus-within:text-stone-800">
+                <span className="absolute inset-y-0 left-0 flex items-center pl-2">
+                    <button type="submit" className="p-1 focus:outline-none focus:shadow-outline">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" className="w-6 h-6"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </button>
                 </span>
-                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:shadow-outline" id="filter" type="text" />
-            </div>
-                
+                <input
+                    onChange={(e) => {
+                        e.preventDefault;
+                        doSetFilter(e.target.value);
+                    }}
+                    type="search"
+                    name="q"
+                    className="w-full py-2 text-sm text-white bg-emerald-300 rounded-md pl-10 focus:outline-none focus:shadow focus:text-stone-800"
+                    placeholder="Search..."
+                    autoComplete='off'
+                />
+                </div>
+            </form>
         </main>
     )
 }

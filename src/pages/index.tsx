@@ -11,13 +11,12 @@ const Home: NextPage = () => {
   return (
     <main className='w-screen'>
       <Head>
-        <title>blogo | lettem know!</title>
+        <title>oh bloggy oh blogga | life goes on!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <BlogPostsProvider>
         <Header />
         <section>
-          <InputFilter />
           <BlogPosts />
         </section>
       </BlogPostsProvider>

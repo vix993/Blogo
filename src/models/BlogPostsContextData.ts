@@ -1,6 +1,8 @@
+import { Dispatch, SetStateAction } from "react";
 import { BlogPost } from "./BlogPost";
 
 export interface BlogPostsContextData {
     blogPosts: BlogPost[]
-    requestBlogPostImage: () => Promise<string>
+    doSetFilter: (filter: string) => void
+    filteredPosts: BlogPost[]
 }

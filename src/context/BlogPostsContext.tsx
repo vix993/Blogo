@@ -13,6 +13,8 @@ export const BlogPostsContext = createContext({} as BlogPostsContextData)
 
 export const BlogPostsProvider = ({ children }: BlogPostsProviderProps) => {
     const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+    const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([]);
+    const [filter, setFilter] = useState('');
 
     // fetching blog posts data
     const requestBlogPosts = () => {
@@ -27,19 +29,32 @@ export const BlogPostsProvider = ({ children }: BlogPostsProviderProps) => {
         });
     }
 
-    const requestBlogPostImage = async () => {
-        const randomImage = await getBlogPostImage();
-        console.log(randomImage.data);
-        return randomImage.data;
+    const filterPosts = (filter: string) => {
+        setFilteredPosts(blogPosts.filter(
+            (post) =>
+                post.title
+                    .toLowerCase()
+                    .includes(filter.toLowerCase())
+                && post.title
+                    .toLowerCase()
+                    .indexOf(filter.toLowerCase()) === 0
+        ));
+    }
+    const doSetFilter = (filter: string) => {
+        setFilter(filter);
     }
 
     useEffect(() => {
         requestBlogPosts();
     }, []);
 
+    useEffect(() => {
+        filterPosts(filter);
+    }, [filter]);
+
     return (
         <BlogPostsContext.Provider
-            value={{blogPosts, requestBlogPostImage}}>
+            value={{blogPosts, doSetFilter, filteredPosts}}>
             {children}
         </BlogPostsContext.Provider>
     );
