@@ -4,7 +4,6 @@ import Head from 'next/head'
 import { BlogPostsProvider } from '../context/BlogPostsContext'
 
 import { BlogPosts } from '../components/BlogPosts'
-import { InputFilter } from '../components/InputFilter'
 import { Header } from '../components/Header'
 
 const Home: NextPage = () => {

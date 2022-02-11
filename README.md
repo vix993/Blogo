@@ -37,5 +37,5 @@ Typescript, Tailwind Css, Next.js and more.
 
 Landing page listing blog posts with filtering function
 
-<img src="./presentation/screenshotLanding.png" alt="screenshot of landing page UI"/>
-<img src="./presentation/screenshotLandingMb.png" alt="screenshot of landing page UI mobile"/>
+<img style="object-fit: contain;" src="./presentation/screenshotLanding.png" alt="screenshot of landing page UI"/>
+<img style="object-fit: contain;" src="./presentation/screenshotLandingMb.png" alt="screenshot of landing page UI mobile"/>
