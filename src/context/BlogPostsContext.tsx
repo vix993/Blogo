@@ -37,7 +37,8 @@ export const BlogPostsProvider = ({ children }: BlogPostsProviderProps) => {
                     .includes(filter.toLowerCase())
                 && post.title
                     .toLowerCase()
-                    .indexOf(filter.toLowerCase()) === 0
+                    .split(' ')
+                    .some((word) => word.indexOf(filter.toLowerCase()) === 0)
         ));
     }
     const doSetFilter = (filter: string) => {
