@@ -12,7 +12,7 @@ export const BlogPostCard: React.FC<BlogPostCardProps> = ({title, body, id}) => 
         truncatedBody = body.substring(0, 100) + '...';
     }
     return (
-        <main className='px-8 pt-4 h-full'>
+        <main className='px-8 pt-4 h-full' id={`blog-post-card-component-${id}`}>
             <div className='w-full h-full flex flex-row rounded-2 gap-2  border border-emerald-200 bg-emerald-100 shadow hover:shadow-lg hover:border-emerald-200 rounded-lg transition duration-400 ease-in-out'>
                 <section className='hidden sm:flex w-1/6 align-center justify-center py-4 px-2'>
                     <img className='object-cover rounded-2xl' src={`https://picsum.photos/id/${id}/100`} alt={title.length > 10 ? title.substring(0, 10) + '...': title} />

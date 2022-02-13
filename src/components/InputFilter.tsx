@@ -9,7 +9,7 @@ interface InputFilterProps {}
 export const InputFilter: React.FC<InputFilterProps> = ({}) => {
     const {blogPosts, doSetFilter} = useContext(BlogPostsContext);
     return (
-        <main className='w-full px-8 py-4'>
+        <main className='w-full px-8 py-4' id="input-filter-component">
             <form>
                 <div className="relative text-stone-200 focus-within:text-stone-800">
                 <span className="absolute inset-y-0 left-0 flex items-center pl-2">
